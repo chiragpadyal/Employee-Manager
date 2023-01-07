@@ -1,0 +1,40 @@
+<div class="p-2 bg-primary text-white ml-auto">
+  <ul class="nav b">
+    <li class="nav-item">
+      <a class="nav-link text-light active" href="#">Employee List</a>
+    </li>
+    <ng-template
+      *ngIf="auth.isAuthenticated$ | async; then trueblock; else falseblock"
+    >
+    </ng-template>
+
+    <ng-template #trueblock>
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="#" (click)="addEmployeeClicked()"
+          >Add Employee</a
+        >
+      </li>
+      <ul class="nav b" *ngIf="auth.user$ | async as user">
+        <li class="nav-item">
+          <a class="nav-link text-dark" routerLink="/logout">Logout</a>
+        </li>
+        <li class="nav-item">
+          <span class="nav-link text-dark">{{ user.name }}</span>
+        </li>
+        <li class="nav-item">
+          <span class="nav-link text-dark">/ {{ user.email }}</span>
+        </li>
+      </ul>
+    </ng-template>
+    <ng-template #falseblock>
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="#" (click)="addEmployeeClicked()"
+          >Add Employee</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-dark" routerLink="/login">Login / Signup</a>
+      </li></ng-template
+    >
+  </ul>
+</div>

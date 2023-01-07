@@ -11,13 +11,13 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 ## Run Backend
+
 ```
 cd spring-boot-backend
 mvn spring-boot:run
 ```
 
-## example.env
-```
-cd spring-boot-backend
-mvn spring-boot:run
-```
+## Edit Follow Configuration
+
+- src/app/app.module.ts
+- spring-boot-backend/src/main/resources/example.application.properties
